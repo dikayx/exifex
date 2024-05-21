@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content="Exif Data Extractor" />
+        <title>
+            {% block title %}Exif Data Extractor | ExifEx{% endblock %}
+        </title>
+        <link rel="stylesheet" href="../static/css/style.css" />
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">Home</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="https://github.com/dan-koller/exifex"
+                            >
+                                <img
+                                    src="../static/img/github-mark-white.svg"
+                                    alt="Github logo"
+                                    height="25"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <div class="container-fluid" id="main-content">
+            {% block content %}{% endblock %}
+        </div>
+        <br />
+        <!-- Footer -->
+        <footer class="footer mt-auto py-2 bg-dark">
+            <div
+                class="container d-flex justify-content-between align-items-center"
+            >
+                <div>
+                    <span class="text-muted">&copy; 2024</span>
+                    <span class="text-muted">
+                        <a
+                            href="https://github.com/dan-koller"
+                            class="text-muted"
+                            >Dan Koller</a
+                        >
+                    </span>
+                </div>
+                <div>
+                    <span class="text-muted">
+                        <a href="/privacy" class="text-muted">Privacy Policy</a>
+                    </span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            let date = new Date();
+            if (date.getFullYear() > 2024) {
+                document.querySelector(
+                    ".footer .container .text-muted"
+                ).textContent += ` - ${date.getFullYear()}`;
+            }
+        </script>
+    </body>
+</html>

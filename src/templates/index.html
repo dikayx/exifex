@@ -1,0 +1,147 @@
+{% extends "base.html" %} {% block title %}Exif Data Extractor | ExifEx{%
+endblock %} {% block content %}
+<div class="container">
+    {% if data %}
+    <div class="row justify-content-center mt-5">
+        {% for item in data %}
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <!-- Preview -->
+                    <h5 class="card-title">{{ item.filename }}</h5>
+                    <p class="card-text">
+                        <strong>Content Type:</strong> {{ item.content_type
+                        }}<br />
+                    </p>
+                    <img
+                        src="{{ item.file }}"
+                        class="img-fluid"
+                        alt="{{ item.filename }}"
+                    />
+                    <br />
+                    <!-- Extracted data -->
+                    {% if item.exif_data %}
+                    <details>
+                        <summary>View EXIF Data</summary>
+                        <ul>
+                            {% for key, value in item.exif_data.items() %}
+                            <li><strong>{{ key }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    </details>
+                    {% else %}
+                    <p class="card-text text-muted">No EXIF data found.</p>
+                    {% endif %}
+                    <!-- GPS Coordinates -->
+                    {% if item.gps_coords %}
+                    <p class="card-text">
+                        <strong>GPS Coordinates:</strong> {{ item.gps_coords
+                        }}<br />
+                        {% if item.maps_url %}
+                        <a href="{{ item.maps_url }}" target="_blank"
+                            >View on Google Maps</a
+                        >
+                        {% endif %}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Drag and Drop Images Here</h5>
+                    <div
+                        class="drag-drop-area border border-dashed p-5 text-center"
+                        id="dragDropArea"
+                    >
+                        <p class="text-muted">
+                            Drag & drop your images here, or click to select
+                            files
+                        </p>
+                        <input
+                            type="file"
+                            class="form-control-file"
+                            id="fileInput"
+                            multiple
+                            style="display: none"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+    const dragDropArea = document.getElementById("dragDropArea");
+    const fileInput = document.getElementById("fileInput");
+
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/gif",
+        "image/webp",
+        "image/tiff",
+    ];
+
+    dragDropArea.addEventListener("click", () => {
+        fileInput.click();
+    });
+
+    dragDropArea.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        dragDropArea.classList.add("bg-light");
+    });
+
+    dragDropArea.addEventListener("dragleave", () => {
+        dragDropArea.classList.remove("bg-light");
+    });
+
+    dragDropArea.addEventListener("drop", (event) => {
+        event.preventDefault();
+        dragDropArea.classList.remove("bg-light");
+        const files = event.dataTransfer.files;
+        handleFiles(files);
+    });
+
+    fileInput.addEventListener("change", () => {
+        const files = fileInput.files;
+        handleFiles(files);
+    });
+
+    function handleFiles(files) {
+        if (files.length === 0) {
+            return;
+        }
+
+        const formData = new FormData();
+        for (let i = 0; i < files.length; i++) {
+            if (!allowedTypes.includes(files[i].type)) {
+                alert("Invalid file type. Please upload an image file.");
+                return;
+            }
+            formData.append("images", files[i]);
+        }
+
+        fetch("/", {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => response.text()) // Expecting an HTML response
+            .then((html) => {
+                document.open();
+                document.write(html);
+                document.close();
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    }
+</script>
+{% endblock %}
