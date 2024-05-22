@@ -42,6 +42,6 @@ However, if you want to run the app locally, follow the instructions below.
     ```
 
     - To run the app in debug mode, run `python3 src/app.py -d`
-    - To change the port or bind address, use the `-p` and `-b` flags respectively (e.g. `python3 src/app.py -b 0.0.0.0 -p 8080`)
+    - To change the port or set the host, use the `-p` and `-h` flags respectively (e.g. `python3 src/app.py -h 0.0.0.0 -p 8080`)
 
 _\*) You might need to use python and pip instead of python3 and pip3 depending on your system._
