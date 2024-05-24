@@ -47,6 +47,23 @@
             </div>
         </nav>
 
+        <!-- Fork ribbon (only on the home page) -->
+        {% if request.path == "/" %}
+        <div>
+            <a href="https://github.com/dan-koller/exifex"
+                ><img
+                    decoding="async"
+                    width="149"
+                    height="149"
+                    src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149"
+                    class="github-fork-ribbon"
+                    alt="Fork me on GitHub"
+                    loading="lazy"
+                    data-recalc-dims="1"
+            /></a>
+        </div>
+        {% endif %}
+
         <!-- Main content -->
         <div class="container-fluid" id="main-content">
             {% block content %}{% endblock %}

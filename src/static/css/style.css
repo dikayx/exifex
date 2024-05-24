@@ -17,3 +17,18 @@
     height: 200px;
     object-fit: contain;
 }
+
+/* Move github fork me badge to the right */
+.github-fork-ribbon {
+    position: absolute;
+    top: 58;
+    right: 0;
+    border: 0;
+}
+
+/* Hide the fork ribbon on small screens */
+@media (max-width: 768px) {
+    .github-fork-ribbon {
+        display: none;
+    }
+}
