@@ -4,7 +4,7 @@ ExifEx is a small utility tool to extract EXIF metadata from images. It is writt
 
 ![Screenshot of the app](res/screenshot.png)
 
-_Example images taken from [this](https://github.com/ianare/exif-samples) repository_
+_Example images taken from [this](https://github.com/ianare/exif-samples) repository._
 
 ## Features
 
@@ -26,7 +26,7 @@ However, if you want to run the app locally, you can follow the [installation in
 
 It's simple! Just drag and drop one or multiple image file into the dropzone or click on it to select a file from your computer. The app will then display the extracted metadata and GPS coordinates (if available).
 
-> **Note**: Exif data can contain sensitive information, such as the location where the image was taken. Only analyze images you have the right to use.
+> **⚠️ Note**: Exif data can contain sensitive information, such as the location where the image was taken. Only analyze images you have the right to use.
 
 ## Installation
 
