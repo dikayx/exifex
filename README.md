@@ -83,7 +83,7 @@ You can also run the app using Docker and the `Dockerfile` provided in the repos
     docker run -p 8080:8080 exifex
     ```
 
-You can also use the `docker-compose.yml` file to run the app. Just run `docker-compose up` and the app will be available on `http://localhost:8080`.
+You can also use the `docker-compose.yml` file to run the app. Just run `docker-compose up` after you built the image and the app will be available on `http://localhost:8080`.
 
 1. Clone the repository
 

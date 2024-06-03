@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    exifex:
+        container_name: exifex
+        build: .
+        image: exifex
+        restart: unless-stopped
+        ports:
+            - "8080:8080"
+        command: --debug
