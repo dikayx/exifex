@@ -101,3 +101,17 @@ You can also use the `docker-compose.yml` file to run the app. Just run `docker-
 3. Access the app on `http://localhost:8080`
 
 4. Stop the app using `Ctrl+C` and run `docker-compose down` to remove the containers
+
+### Configuration
+
+There are limitations to the file size and the number of images you can analyze at once. You can change these values by modifying the `MAX_CONTENT_LENGTH` and `MAX_FILES` variables in the [app.py](src/app.py) and [main.js](src/static/js/main.js) files.
+
+These values are set to 16MB and 10 images respectively due to the limitations of the free tier of Vercel.
+
+## Contributing
+
+If you want to contribute to the project, feel free to open an issue or a pull request. You can also suggest new features or improvements by creating an issue.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.

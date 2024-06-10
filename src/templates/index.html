@@ -1,6 +1,22 @@
 {% extends "base.html" %} {% block title %}Exif Data Extractor | ExifEx{%
 endblock %} {% block content %}
 <div class="container">
+    <!-- Error message -->
+    {% if error %}
+    <div
+        class="alert alert-danger alert-dismissible fade show mt-5"
+        role="alert"
+    >
+        {{ error }}
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+        ></button>
+    </div>
+    {% endif %}
+    <!-- Render data -->
     {% if data %}
     <div class="row justify-content-center mt-5">
         {% for item in data %}
@@ -50,6 +66,7 @@ endblock %} {% block content %}
         {% endfor %}
     </div>
     {% else %}
+    <!-- Upload images -->
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
             <div class="card">
