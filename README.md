@@ -64,6 +64,7 @@ ExifEx requires Python 3.11 or higher to run locally.
 
     - To run the app in debug mode, run `python3 src/app.py -d`
     - To change the port or set the host, use the `-p` and `-b` flags respectively (e.g. `python3 src/app.py -b 0.0.0.0 -p 8080`)
+    - To disable upload limits, add the `--no-limits` flag
 
 _\*) You might need to use python and pip instead of python3 and pip3 depending on your system._
 
@@ -104,9 +105,13 @@ You can also use the `docker-compose.yml` file to run the app. Just run `docker-
 
 ### Configuration
 
-There are limitations to the file size and the number of images you can analyze at once. You can change these values by modifying the `MAX_CONTENT_LENGTH` and `MAX_FILES` variables in the [app.py](src/app.py) and [main.js](src/static/js/main.js) files.
+By default, there are limitations to the file size and the number of images you can analyze at once when running the app locally or accessing it on Vercel. These values are set to **8 images at once** and **10 MB** due to the limitations of the free tier of Vercel.
 
-These values are set to 16MB and 10 images respectively due to the limitations of the free tier of Vercel.
+You can change these values by modifying the `MAX_FILES` and `MAX_SIZE` variables in the [config.py](src/config.py) and [main.js](src/static/js/main.js) files. Set both values to `0` to remove the limitations.
+
+> **⚠️ Note**: Increasing the limits can lead to performance issues and might cause the app to crash if the server runs out of memory.
+
+**When running the app using Docker, the limitations are disabled.**
 
 ## Contributing
 
