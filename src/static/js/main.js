@@ -74,7 +74,6 @@ function initializeFileUpload() {
         }
 
         const formData = new FormData();
-        // TODO: If an alert is displayed, it gets rendered twice...
         for (let i = 0; i < files.length; i++) {
             // Image must not exceed 10MB
             if (files[i].size > MAX_CONTENT_LENGTH && hasSizeLimit) {

@@ -32,13 +32,13 @@ def index():
         if image and allowed_file(image.filename):
             filename = secure_filename(image.filename)
             file_size = len(image.read())
-            image.seek(0)  # Reset file pointer to the beginning after reading for size
+            image.seek(0) # Reset file pointer to the beginning after reading for size
 
             if app.config['MAX_SIZE'] and file_size > app.config['MAX_CONTENT_LENGTH']:
                 return render_template('index.html', error=f"{filename} is too large! Maximum size is {app.config['MAX_SIZE']} MB.")
 
             encoded_image = base64.b64encode(image.read()).decode('utf-8')
-            image.seek(0)  # Reset file pointer again for reading image content
+            image.seek(0) # Reset file pointer again for reading image content
             
             meta_data = extract_gps_info(image)
             f_gps_coords = format_coordinates(meta_data.get("gps_coords")) if meta_data.get("gps_coords") else None
@@ -68,7 +68,6 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    # TODO: Find a better way to handle this
     if args.no_limits:
         app.config['MAX_FILES'] = 0
         app.config['MAX_SIZE'] = 0
