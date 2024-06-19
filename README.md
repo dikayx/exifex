@@ -20,7 +20,7 @@ _Example images taken from [this](https://github.com/ianare/exif-samples) reposi
 
 The easiest way is to use the website hosted on Vercel. You can access it on [here (TODO)](README).
 
-However, if you want to run the app locally, you can follow the [installation instructions](#installation) below.
+However, if you want to run the app locally, you can follow the [installation instructions](#installation) below or use the [setup.sh](setup.sh) script to set up the app on your machine.
 
 ### Usage
 
