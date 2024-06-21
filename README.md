@@ -20,7 +20,7 @@ _Example images taken from [this](https://github.com/ianare/exif-samples) reposi
 
 The easiest way is to use the website hosted on Vercel. You can access it on [here (TODO)](README).
 
-However, if you want to run the app locally, you can follow the [installation instructions](#installation) below or use the [setup.sh](setup.sh) script to set up the app on your machine.
+However, if you want to run the app locally, simply use the [setup.sh](setup.sh) script to set up the app on your machine or take a look at the [installation guide](docs/INSTALLATION.md) for more detailed instructions.
 
 ### Usage
 
@@ -28,90 +28,11 @@ It's simple! Just drag and drop one or multiple image file into the dropzone or 
 
 > **⚠️ Note**: Exif data can contain sensitive information, such as the location where the image was taken. Only analyze images you have the right to use.
 
-## Installation
+### Limitations
 
-You can either run the app directly on your machine or use Docker to run it in a container.
+By default, there are limitations to the file size and the number of images you can analyze at once when running the app locally or accessing it on Vercel. These values are set to **8 images at once** and **10 MB** due to the limitations of the free tier of Vercel. To customize these values, take a look at the [configuration guide](docs/CONFIGURATION.md).
 
-### Local
-
-ExifEx requires Python 3.11 or higher to run locally.
-
-1. Clone the repository
-
-    ```bash
-    git clone https://github.com/dan-koller/exifex
-    ```
-
-2. Create a new virtual environment & activate it
-
-    ```bash
-    python3 -m venv .venv && source .venv/bin/activate
-    ```
-
-    > On Windows, open a command prompt and run `.venv\Scripts\activate.bat`
-
-3. Install the required Python packages
-
-    ```bash
-    pip3 install -r requirements.txt
-    ```
-
-4. Run the script you want to use
-
-    ```bash
-    python3 src/app.py
-    ```
-
-    - To run the app in debug mode, run `python3 src/app.py -d`
-    - To change the port or set the host, use the `-p` and `-b` flags respectively (e.g. `python3 src/app.py -b 0.0.0.0 -p 8080`)
-    - To disable upload limits, add the `--no-limits` flag
-
-_\*) You might need to use python and pip instead of python3 and pip3 depending on your system._
-
-### Docker
-
-You can also run the app using Docker and the `Dockerfile` provided in the repository.
-
-1. Build the Docker image
-
-    ```bash
-    docker build -t exifex .
-    ```
-
-2. Run the Docker container
-
-    ```bash
-    docker run -p 8080:8080 exifex
-    ```
-
-You can also use the `docker-compose.yml` file to run the app. Just run `docker-compose up` after you built the image and the app will be available on `http://localhost:8080`.
-
-1. Clone the repository
-
-    ```bash
-    git clone https://github.com/dan-koller/exifex
-    cd exifex
-    ```
-
-2. Run the app using Docker Compose
-
-    ```bash
-    docker-compose up
-    ```
-
-3. Access the app on `http://localhost:8080`
-
-4. Stop the app using `Ctrl+C` and run `docker-compose down` to remove the containers
-
-### Configuration
-
-By default, there are limitations to the file size and the number of images you can analyze at once when running the app locally or accessing it on Vercel. These values are set to **8 images at once** and **10 MB** due to the limitations of the free tier of Vercel.
-
-You can change these values by modifying the `MAX_FILES` and `MAX_SIZE` variables in the [config.py](src/config.py) and [main.js](src/static/js/main.js) files. Set both values to `0` to remove the limitations.
-
-> **⚠️ Note**: Increasing the limits can lead to performance issues and might cause the app to crash if the server runs out of memory.
-
-**When running the app using Docker, the limitations are disabled.**
+_When running the app using Docker, the limitations are disabled by default. The setup script will also ask you if you want to disable the limitations._
 
 ## Contributing
 
