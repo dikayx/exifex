@@ -2,7 +2,7 @@
 
 ExifEx is a small utility tool to extract EXIF metadata from images. It is written in Python and Flask and uses the Pillow library to read the images and retrieve the metadata.
 
-![Screenshot of the app](res/screenshot.png)
+![Screenshot of the app](assets/screenshot.png)
 
 _Example images taken from [this](https://github.com/ianare/exif-samples) repository._
 

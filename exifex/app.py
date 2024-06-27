@@ -3,15 +3,14 @@ import sys
 
 from flask import Flask
 
+from exifex import routes
 from exifex.config import Config
-from exifex.routes import blueprint
 
 
 def create_app():
     """
     Create application factory, as explained here:
     http://flask.pocoo.org/docs/patterns/appfactories/.
-    :param config_object: The configuration object to use.
     """
     app = Flask(__name__)
     app.config.from_object(Config)
@@ -23,7 +22,7 @@ def create_app():
 
 def register_blueprints(app):
     """Register Flask blueprints."""
-    app.register_blueprint(blueprint)
+    app.register_blueprint(routes.blueprint)
 
 def configure_logger(app):
     """Configure loggers."""
