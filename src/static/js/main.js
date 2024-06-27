@@ -9,18 +9,6 @@ function initializeFileUpload() {
     const dragDropArea = document.getElementById("dragDropArea");
     const fileInput = document.getElementById("fileInput");
 
-    // -------------- Configuration ----------------- //
-    // If you don't want to limit the number of images
-    // or the size of each image, set the values to 0.
-    // --------------------------------------------- //
-    const MAX_FILES = 8; // Images at a time
-    const MAX_SIZE = 10; // MB per image
-
-    // Do not change these values
-    const MAX_CONTENT_LENGTH = MAX_SIZE * 1024 * 1024;
-    const hasUploadLimit = MAX_FILES > 0;
-    const hasSizeLimit = MAX_CONTENT_LENGTH > 0;
-
     const allowedTypes = [
         "image/jpeg",
         "image/png",
@@ -68,18 +56,8 @@ function initializeFileUpload() {
             return;
         }
 
-        if (files.length > MAX_FILES && hasUploadLimit) {
-            alert(`You can only upload up to ${MAX_FILES} files at once.`);
-            return;
-        }
-
         const formData = new FormData();
         for (let i = 0; i < files.length; i++) {
-            // Image must not exceed 10MB
-            if (files[i].size > MAX_CONTENT_LENGTH && hasSizeLimit) {
-                alert(`File size must be less than ${MAX_SIZE}MB.`);
-                return;
-            }
             // Only support image files (JPEG, PNG, GIF, WEBP, TIFF)
             if (!allowedTypes.includes(files[i].type)) {
                 alert("Invalid file type. Please upload an image file.");

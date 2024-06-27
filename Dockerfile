@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 8080
 
-ENTRYPOINT ["python", "src/app.py", "-p", "8080", "-b", "0.0.0.0", "--no-limits"]
+ENTRYPOINT ["python", "src/app.py", "-p", "8080", "-b", "0.0.0.0"]
