@@ -105,8 +105,8 @@ else
     # Run the app with the user's configuration
     echo "Starting ExifEx on $host:$port with limits set to $limit..."
     if [ $limit = "true" ]; then
-        .venv/bin/python src/app.py -b $host -p $port
+        .venv/bin/python start.py -b $host -p $port
     else
-        .venv/bin/python src/app.py -b $host -p $port --no-limits
+        .venv/bin/python start.py -b $host -p $port --no-limits
     fi
 fi

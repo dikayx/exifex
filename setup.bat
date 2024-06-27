@@ -99,9 +99,9 @@ if %errorlevel% equ 0 (
     rem Run the app with the user's configuration
     echo Starting ExifEx on !host!:!port! with limits set to !limit!...
     if "!limit!"=="true" (
-        python src\app.py -b !host! -p !port!
+        python start.py -b !host! -p !port!
     ) else (
-        python src\app.py -b !host! -p !port! --no-limits
+        python start.py -b !host! -p !port! --no-limits
     )
 )
 

@@ -31,11 +31,11 @@ ExifEx requires Python 3.11 or higher to run locally.
 4. Run the script you want to use
 
     ```bash
-    python3 src/app.py
+    python3 start.py
     ```
 
-    - To run the app in debug mode, run `python3 src/app.py -d`
-    - To change the port or set the host, use the `-p` and `-b` flags respectively (e.g. `python3 src/app.py -b 0.0.0.0 -p 8080`)
+    - To run the app in debug mode, run `python3 start.py -d`
+    - To change the port or set the host, use the `-p` and `-b` flags respectively (e.g. `python3 start.py -b 0.0.0.0 -p 8080`)
     - To disable upload limits, add the `--no-limits` flag
 
 _\*) You might need to use python and pip instead of python3 and pip3 depending on your system._
