@@ -74,3 +74,11 @@ You can also use the `docker-compose.yml` file to run the app. Just run `docker-
 3. Access the app on `http://localhost:8080`
 
 4. Stop the app using `Ctrl+C` and run `docker-compose down` to remove the containers
+
+# Testing
+
+Unit testing is done using `pytest`. You can run the tests using the following command in the root directory of the project:
+
+```bash
+pytest
+```
