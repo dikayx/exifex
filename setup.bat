@@ -81,14 +81,6 @@ if %errorlevel% equ 0 (
         call :CHECK_PORT %port%
     )
 
-    rem Ask the user if they want to disable limits (default is no)
-    echo Would you like to disable limits? (y/n)
-    set limit=true
-    set /p "yn="
-    if /i "!yn!"=="y" (
-        set limit=false
-    )
-
     rem Setup python virtual environment
     python -m venv .venv
     call .venv\Scripts\activate
@@ -97,12 +89,8 @@ if %errorlevel% equ 0 (
     pip install -r requirements.txt
 
     rem Run the app with the user's configuration
-    echo Starting ExifEx on !host!:!port! with limits set to !limit!...
-    if "!limit!"=="true" (
-        python start.py -b !host! -p !port!
-    ) else (
-        python start.py -b !host! -p !port! --no-limits
-    )
+    echo Starting ExifEx on !host!:!port!...
+    python start.py -b !host! -p !port!
 )
 
 endlocal

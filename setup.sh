@@ -83,18 +83,6 @@ else
         port=${port:-8080}
     done
 
-    # Ask the user if they want to disable limits (default is no)
-    echo "Would you like to disable limits? (y/n)"
-    limit="true"
-    while true; do
-        read -p "" yn
-        case $yn in
-            [Yy]* ) limit="false"; break;;
-            [Nn]* ) break;;
-            * ) echo "Please answer 'y' or 'n'.";;
-        esac
-    done
-
     # Setup python virtual environment
     python3 -m venv .venv
     source .venv/bin/activate
@@ -103,10 +91,6 @@ else
     pip3 install -r requirements.txt
 
     # Run the app with the user's configuration
-    echo "Starting ExifEx on $host:$port with limits set to $limit..."
-    if [ $limit = "true" ]; then
-        .venv/bin/python start.py -b $host -p $port
-    else
-        .venv/bin/python start.py -b $host -p $port --no-limits
-    fi
+    echo "Starting ExifEx on $host:$port..."
+    .venv/bin/python start.py -b $host -p $port
 fi

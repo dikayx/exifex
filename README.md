@@ -1,5 +1,9 @@
 # ExifEx
 
+[![Python3](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
+[![Build Status](https://github.com/dan-koller/exifex/actions/workflows/python-app.yml/badge.svg)](https://github.com/dan-koller/exifex/actions/workflows/python-app.yml)
+
 ExifEx is a small utility tool to extract EXIF metadata from images. It is written in Python and Flask and uses the Pillow library to read the images and retrieve the metadata.
 
 ![Screenshot of the app](assets/screenshot.png)
@@ -24,6 +28,12 @@ To get the app up and running on Mac or Linux, run:
 
 ```bash
 git clone https://github.com/dan-koller/exifex.git && cd exifex && chmod +x setup.sh && ./setup.sh
+```
+
+On Windows, run:
+
+```bash
+git clone https://github.com/dan-koller/exifex.git && cd exifex && setup.bat
 ```
 
 Follow the instructions in the terminal to start the app. By default, it will be available at [http://localhost:8080](http://localhost:8080).
