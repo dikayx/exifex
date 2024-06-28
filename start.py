@@ -1,4 +1,5 @@
 import argparse
+
 from exifex import app
 
 
