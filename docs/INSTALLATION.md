@@ -14,7 +14,7 @@ ExifEx requires Python 3.11 or higher to run locally.
     git clone https://github.com/dan-koller/exifex
     ```
 
-2. Create a new virtual environment & activate it
+2. Create a new virtual environment\* & activate it
 
     ```bash
     python3 -m venv .venv && source .venv/bin/activate
@@ -22,21 +22,20 @@ ExifEx requires Python 3.11 or higher to run locally.
 
     > On Windows, open a command prompt and run `.venv\Scripts\activate.bat`
 
-3. Install the required Python packages
+3. Install the required Python packages\*
 
     ```bash
     pip3 install -r requirements.txt
     ```
 
-4. Run the script you want to use
+4. Run the app
 
     ```bash
-    python3 start.py
+    .venv/bin/python start.py
     ```
 
     - To run the app in debug mode, run `python3 start.py -d`
     - To change the port or set the host, use the `-p` and `-b` flags respectively (e.g. `python3 start.py -b 0.0.0.0 -p 8080`)
-    - To disable upload limits, add the `--no-limits` flag
 
 _\*) You might need to use python and pip instead of python3 and pip3 depending on your system._
 

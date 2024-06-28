@@ -16,17 +16,27 @@ _Example images taken from [this](https://github.com/ianare/exif-samples) reposi
 
 ## Get started
 
-Use the [setup.sh](setup.sh) (Mac & Linux) or [setup.bat](setup.bat) (Windows) script to set up the app via Docker or locally or take a look at the [installation guide](docs/INSTALLATION.md) for more detailed instructions.
+Download the latest release from the [releases page](https://github.com/dan-koller/exifex/releases) and use the [setup.sh](setup.sh) (Mac & Linux) or [setup.bat](setup.bat) (Windows) script to set up the app via Docker or locally. For more detailed instructions, see the [installation guide](docs/INSTALLATION.md).
+
+### Quickstart
+
+To get the app up and running on Mac or Linux, run:
+
+```bash
+git clone https://github.com/dan-koller/exifex.git && cd exifex && chmod +x setup.sh && ./setup.sh
+```
+
+Follow the instructions in the terminal to start the app. By default, it will be available at [http://localhost:8080](http://localhost:8080).
 
 ### Usage
 
-It's simple! Just drag and drop one or multiple image file into the dropzone or click on it to select a file from your computer. The app will then display the extracted metadata and GPS coordinates (if available).
+It's simple! Just drag and drop one or multiple images into the dropzone or click on it to select a file from your computer. The app will then display the extracted metadata and GPS coordinates (if available).
 
 > **⚠️ Note**: Exif data can contain sensitive information, such as the location where the image was taken. Only analyze images you have the right to use.
 
 ## Contributing
 
-If you want to contribute to the project, feel free to open an issue or a pull request. You can also suggest new features or improvements by creating an issue.
+If you want to contribute to the project, feel free to open an issue or a pull request. You can also suggest new features or improvements by [creating an issue](https://github.com/dan-koller/exifex/issues).
 
 ## License
 
