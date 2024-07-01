@@ -30,9 +30,9 @@ To get the app up and running on Mac or Linux, run:
 git clone https://github.com/dan-koller/exifex.git && cd exifex && chmod +x setup.sh && ./setup.sh
 ```
 
-On Windows, run:
+On Windows, open a command prompt (cmd) and run:
 
-```bash
+```cmd
 git clone https://github.com/dan-koller/exifex.git && cd exifex && setup.bat
 ```
 

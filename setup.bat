@@ -3,33 +3,28 @@ setlocal EnableDelayedExpansion
 
 rem This script is used to help the user setup the entire project
 
-set "banner=--------------------------------
-  ______      _  __ ______      
- |  ____|    (_)/ _|  ____|     
- | |__  __  ___| |_| |__  __  __
- |  __| \ \/ / |  _|  __| \ \/ /
- | |____ >  <| | | | |____ >  < 
- |______/_/\_\_|_| |______/_/\_\
+echo "---------------------------------"
+echo "  ______      _  __ ______       "
+echo " |  ____|    (_)/ _|  ____|      "
+echo " | |__  __  ___| |_| |__  __  __ "
+echo " |  __| \ \/ / |  _|  __| \ \/ / "
+echo " | |____ >  <| | | | |____ >  <  "
+echo " |______/_/\_\_|_| |______/_/\_\ "
+echo "---------------------------------"
 
---------------------------------"
-echo %banner%
 echo Welcome to the ExifEx setup script!
 echo Press any key to continue...
 pause >nul
 
-rem Function to check if the port is valid
-:CHECK_PORT
-set port=%1
-if not defined port set port=8080
-if "%port%"=="0" (
-    set "isValidPort=false"
+rem Check if Python is installed
+python --version >nul 2>&1
+if %errorlevel% equ 0 (
+    echo Python installation found. Proceeding...
 ) else (
-    set "isValidPort=true"
-    for /L %%i in (1,1,65535) do (
-        if "!port!"=="%%i" set "isValidPort=true"
-    )
+    echo Python is not installed. Please install Python 3.10 or higher.
+    echo Exiting...
+    exit /b
 )
-exit /b
 
 rem Check if Docker is running
 docker info >nul 2>&1
@@ -92,5 +87,19 @@ if %errorlevel% equ 0 (
     echo Starting ExifEx on !host!:!port!...
     python start.py -b !host! -p !port!
 )
+
+rem Function to check if the port is valid
+:CHECK_PORT
+set port=%1
+if not defined port set port=8080
+if "%port%"=="0" (
+    set "isValidPort=false"
+) else (
+    set "isValidPort=true"
+    for /L %%i in (1,1,65535) do (
+        if "!port!"=="%%i" set "isValidPort=true"
+    )
+)
+exit /b
 
 endlocal
