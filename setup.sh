@@ -20,16 +20,6 @@ echo "Welcome to the ExifEx setup script!"
 echo "Press any key to continue..."
 read -n 1 -s
 
-# Check if Python 3 is installed
-PYTHON_INSTALLED=$(python3 --version > /dev/null 2>&1)
-if [ -n "$PYTHON_INSTALLED" ]; then
-    echo "Python 3 installation found. Proceeding..."
-else
-    echo "Python 3 is not installed. Please install Python 3.10 or higher."
-    echo "Exiting..."
-    exit
-fi
-
 # Function to check if the port is valid
 is_valid_port() {
     local port=$1
@@ -75,6 +65,16 @@ else
             * ) echo "Please answer 'y' or 'n'.";;
         esac
     done
+
+    # Check if Python 3 is installed
+    PYTHON_INSTALLED=$(python3 --version > /dev/null 2>&1)
+    if [ -n "$PYTHON_INSTALLED" ]; then
+        echo "Python 3 installation found. Proceeding..."
+    else
+        echo "Python 3 is not installed. Please install Python 3.10 or higher."
+        echo "Exiting..."
+        exit
+    fi
 
     # Ask the user for the host (default is 127.0.0.1)
     echo "Please enter the host for the local environment (default is 127.0.0.1):"

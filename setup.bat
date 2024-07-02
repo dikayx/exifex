@@ -16,16 +16,6 @@ echo Welcome to the ExifEx setup script!
 echo Press any key to continue...
 pause >nul
 
-rem Check if Python is installed
-python --version >nul 2>&1
-if %errorlevel% equ 0 (
-    echo Python installation found. Proceeding...
-) else (
-    echo Python is not installed. Please install Python 3.10 or higher.
-    echo Exiting...
-    exit /b
-)
-
 rem Check if Docker is running
 docker info >nul 2>&1
 if %errorlevel% equ 0 (
@@ -56,6 +46,16 @@ if %errorlevel% equ 0 (
     if /i "!yn!"=="y" (
         echo Setting up local environment...
     ) else (
+        echo Exiting...
+        exit /b
+    )
+
+    rem Check if Python is installed
+    python --version >nul 2>&1
+    if %errorlevel% equ 0 (
+        echo Python installation found. Proceeding...
+    ) else (
+        echo Python is not installed. Please install Python 3.10 or higher.
         echo Exiting...
         exit /b
     )
