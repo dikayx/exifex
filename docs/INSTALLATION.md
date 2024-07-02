@@ -52,7 +52,7 @@ You can also run the app using Docker and the `Dockerfile` provided in the repos
 2. Run the Docker container
 
     ```bash
-    docker run -p 8080:8080 exifex
+    docker run -p 8080:8080 --name exifex exifex
     ```
 
 You can also use the `docker-compose.yml` file to run the app. Just run `docker-compose up` after you built the image and the app will be available on `http://localhost:8080`.

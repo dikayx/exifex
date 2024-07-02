@@ -1,6 +1,6 @@
 # ExifEx
 
-[![Python3](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![Python3](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 [![Build Status](https://github.com/dan-koller/exifex/actions/workflows/python-app.yml/badge.svg)](https://github.com/dan-koller/exifex/actions/workflows/python-app.yml)
 

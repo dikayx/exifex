@@ -62,7 +62,7 @@ if [ -n "$DOCKER_INSTALLED" ]; then
     done
 
     echo "Starting ExifEx container on port $port..."
-    docker run -p $port:$port exifex
+    docker run -p $port:$port --name exifex exifex
 else
     # Setup a local environment
     echo "It appears that Docker is not installed or the Docker daemon is not running."
