@@ -1,7 +1,9 @@
 import logging
+import os
 import sys
 
 from flask import Flask
+from flask_wtf.csrf import CSRFProtect
 
 from exifex import routes
 from exifex.config import Config
@@ -13,10 +15,15 @@ def create_app():
     http://flask.pocoo.org/docs/patterns/appfactories/.
     """
     app = Flask(__name__)
+    app.secret_key = os.urandom(24)
     app.config.from_object(Config)
     Config.init_app(app)
 
+    csrf = CSRFProtect(app)
+
     register_blueprints(app)
+
+    configure_logger(app)
 
     return app
 

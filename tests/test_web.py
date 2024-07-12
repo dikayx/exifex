@@ -46,3 +46,9 @@ def test_index_no_error(client):
     response = client.get('/')
     error_regex = rb'<div[^>]*class="alert"[^>]*>.*</div>'
     assert not bool(re.search(error_regex, response.data))
+
+# Index page should contain a hidden input field for CSRF token
+def test_index_csrf_token(client):
+    response = client.get('/')
+    csrf_token_regex = rb'<input[^>]*type="hidden"[^>]*name="csrf_token"[^>]*>'
+    assert bool(re.search(csrf_token_regex, response.data))

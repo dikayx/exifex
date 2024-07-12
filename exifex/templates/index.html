@@ -72,6 +72,11 @@ endblock %} {% block content %}
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Drag and Drop Images Here</h5>
+                    <input
+                        type="hidden"
+                        name="csrf_token"
+                        value="{{ csrf_token() }}"
+                    />
                     <div
                         class="drag-drop-area border border-dashed p-5 text-center"
                         id="dragDropArea"

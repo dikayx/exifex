@@ -66,6 +66,12 @@ function initializeFileUpload() {
             formData.append("images", files[i]);
         }
 
+        // Get the CSRF token from the form
+        const csrfToken = document.querySelector(
+            'input[name="csrf_token"]'
+        ).value;
+        formData.append("csrf_token", csrfToken);
+
         fetch("/", {
             method: "POST",
             body: formData,
