@@ -22,6 +22,8 @@ _Example images taken from [this](https://github.com/ianare/exif-samples) reposi
 
 Download the latest release from the [releases page](https://github.com/dan-koller/exifex/releases) and use the [setup.sh](setup.sh) (Mac & Linux) or [setup.bat](setup.bat) (Windows) script to set up the app via Docker or locally. For more detailed instructions, see the [installation guide](docs/INSTALLATION.md).
 
+If you are already familiar with Git, you can use the commands below to clone the repository and run the setup script.
+
 ### Quickstart
 
 To get the app up and running on Mac or Linux, run:
