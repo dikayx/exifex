@@ -16,7 +16,8 @@ _Example images taken from [this](https://github.com/ianare/exif-samples) reposi
 -   🕵️‍♀️ Display the metadata and GPS coordinates in a human-readable format
 -   🌍 Generate a Google Maps link to the location where the image was taken (if available)
 -   🗂️ Supports multiple images at once
--   🔒 No data is stored on the server
+-   📁 No data is stored on the server
+-   🔒 Secure and privacy-friendly
 
 ## Get started
 
@@ -38,7 +39,7 @@ On Windows, open a command prompt (cmd) and run:
 git clone https://github.com/dan-koller/exifex.git && cd exifex && setup.bat
 ```
 
-Follow the instructions in the terminal to start the app. By default, it will be available at [http://localhost:8080](http://localhost:8080).
+Follow the instructions in the terminal to start the app. By default, it will be available at [http://localhost:8080](http://localhost:8080). If you want to use SSL, see the [Securing the app with SSL](docs/INSTALLATION.md#securing-the-app-with-ssl) section in the installation guide.
 
 ### Usage
 
