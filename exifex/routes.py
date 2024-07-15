@@ -3,8 +3,8 @@ import base64
 from flask import Blueprint, render_template, request
 from werkzeug.utils import secure_filename
 
-from exifex.utils import extract_gps_info, format_coordinates
 from exifex.helpers import allowed_file
+from exifex.utils import extract_gps_info, format_coordinates
 
 blueprint = Blueprint("exifex", __name__)
 
