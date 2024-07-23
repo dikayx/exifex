@@ -48,7 +48,7 @@
         </nav>
 
         <!-- Fork ribbon (only on the home page) -->
-        {% if request.path == "/" %}
+        {% if request.method == "GET" and request.path == "/" %}
         <div>
             <a href="https://github.com/dan-koller/exifex"
                 ><img
