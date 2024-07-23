@@ -49,7 +49,7 @@ It's simple! Just drag and drop one or multiple images into the dropzone or clic
 
 ## Contributing
 
-If you want to contribute to the project, feel free to open an issue or a pull request. You can also suggest new features or improvements by [creating an issue](https://github.com/dan-koller/exifex/issues).
+If you want to contribute to the project, feel free to open an issue or a pull request. You can also suggest new features or improvements by [creating an issue](https://github.com/dan-koller/exifex/issues). Check out the [contributing guidelines](docs/CONTRIBUTING.md) for more information.
 
 ## License
 
