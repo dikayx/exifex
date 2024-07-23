@@ -41,7 +41,7 @@ if %errorlevel% equ 0 (
 ) else (
     rem Setup a local environment
     echo It appears that Docker is not installed or the Docker daemon is not running.
-    echo Would you like to setup a local environment instead? (y/n)
+    echo Would you like to setup a local environment instead? (y/n^)
     set /p "yn="
     if /i "!yn!"=="y" (
         echo Setting up local environment...
