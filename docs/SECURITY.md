@@ -10,7 +10,16 @@ ExifEx aims to be a secure and privacy-friendly tool to extract EXIF metadata fr
 
     > **Note**: For development purposes, you can use a self-signed certificate with the `-a` flag to enable SSL. However, for production, you should use a valid SSL certificate. See the [installation guide](INSTALLATION.md#securing-the-app-with-ssl) for more information.
 
-## Reporting Security Issues
+## Supported Versions
+
+ExifEx tries to follow the latest security best practices and recommendations. As such, usually only the latest stable version of the app is supported. If you are using an older version of ExifEx, it is recommended to update to the latest version to ensure you have the latest security fixes and improvements.
+
+| Version      | Supported |
+| ------------ | --------- |
+| 1.0.x        | ✅        |
+| < 1.0 (Beta) | ❌        |
+
+## Reporting a Vulnerability
 
 If you discover a security issue in ExifEx, please [create an issue](https://github.com/dan-koller/exifex/issues). I take security seriously and will do my best to address the issue promptly.
 
