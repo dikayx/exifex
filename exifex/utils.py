@@ -16,6 +16,7 @@ def dms_to_string(dms_tuple) -> str:
     degrees, minutes, seconds = map(float, dms_tuple)
     return f"{degrees:.1f}° {minutes:.1f}' {seconds:.2f}\""
 
+
 def format_coordinates(data) -> str:
     """
     Creates a human-readable string from a dictionary containing latitude and longitude information.
@@ -30,11 +31,12 @@ def format_coordinates(data) -> str:
     lat = data['lat']
     lon_ref = data['lon_ref']
     lon = data['lon']
-    
+
     lat_str = dms_to_string(lat)
     lon_str = dms_to_string(lon)
-    
+
     return f"Latitude: {lat_str} {lat_ref}, Longitude: {lon_str} {lon_ref}"
+
 
 def convert_decimal_degrees(degree, minutes, seconds, direction) -> float:
     """
@@ -54,6 +56,7 @@ def convert_decimal_degrees(degree, minutes, seconds, direction) -> float:
         decimal_degrees *= -1
     return decimal_degrees
 
+
 def create_google_maps_url(gps_coords) -> str:
     """
     Create a Google Maps URL from GPS coordinates.
@@ -64,15 +67,16 @@ def create_google_maps_url(gps_coords) -> str:
     Returns:
     - str: A URL to Google Maps with the GPS coordinates.
     """
-    dec_deg_lat = convert_decimal_degrees(float(gps_coords["lat"][0]), 
-                                          float(gps_coords["lat"][1]), 
-                                          float(gps_coords["lat"][2]), 
+    dec_deg_lat = convert_decimal_degrees(float(gps_coords["lat"][0]),
+                                          float(gps_coords["lat"][1]),
+                                          float(gps_coords["lat"][2]),
                                           gps_coords["lat_ref"])
-    dec_deg_lon = convert_decimal_degrees(float(gps_coords["lon"][0]), 
-                                          float(gps_coords["lon"][1]), 
-                                          float(gps_coords["lon"][2]), 
+    dec_deg_lon = convert_decimal_degrees(float(gps_coords["lon"][0]),
+                                          float(gps_coords["lon"][1]),
+                                          float(gps_coords["lon"][2]),
                                           gps_coords["lon_ref"])
     return f"https://maps.google.com/?q={dec_deg_lat},{dec_deg_lon}"
+
 
 def extract_gps_info(file) -> dict:
     """
@@ -89,11 +93,11 @@ def extract_gps_info(file) -> dict:
         "exif_data": {},
         "gps_coords": {}
     }
-    
+
     try:
         image = Image.open(file)
         exif_data = image._getexif()
-        
+
         if exif_data is None:
             print(f"{file} contains no exif data.")
         else:
@@ -121,5 +125,5 @@ def extract_gps_info(file) -> dict:
 
     except IOError:
         print(f"File format not supported for {file}!")
-    
+
     return gps_data

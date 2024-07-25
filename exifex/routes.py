@@ -14,16 +14,16 @@ blueprint = Blueprint("exifex", __name__)
 def index():
     if request.method == "GET":
         return render_template('index.html')
-    
+
     images = request.files.getlist('images')
-    
+
     data = []
     for image in images:
         if image and allowed_file(image.filename):
             filename = secure_filename(image.filename)
             encoded_image = base64.b64encode(image.read()).decode('utf-8')
-            image.seek(0) # Reset file pointer after reading
-            
+            image.seek(0)  # Reset file pointer after reading
+
             meta_data = extract_gps_info(image)
             f_gps_coords = format_coordinates(meta_data.get("gps_coords")) if meta_data.get("gps_coords") else None
             data.append({
@@ -36,5 +36,5 @@ def index():
             })
         else:
             return render_template('index.html', error=f"Invalid file type: {filename}.")
-        
+
     return render_template('index.html', data=data)
