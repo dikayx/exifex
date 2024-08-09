@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="description" content="Exif Data Extractor" />
+        <!-- CSP -->
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; 
+            img-src 'self' data: https://github.blog; font-src 'self'; connect-src 'self'; frame-src 'none';"
+        />
         <title>
             {% block title %}Exif Data Extractor | ExifEx{% endblock %}
         </title>

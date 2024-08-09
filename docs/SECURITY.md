@@ -2,6 +2,8 @@
 
 ExifEx aims to be a secure and privacy-friendly tool to extract EXIF metadata from images. To ensure the safety of the users, there are several security measures in place to protect against common vulnerabilities and threats. The main areas of focus are:
 
+-   **CSP**: ExifEx enforces a strict Content Security Policy (CSP) to prevent XSS attacks and other code injection vulnerabilities. This helps to prevent malicious scripts from being executed on the client side. Enabled by default.
+
 -   **CSRF protection**: ExifEx uses Flask-WTF to protect against Cross-Site Request Forgery (CSRF) attacks. This is done by generating a unique token for each submission and validating it on the server side. **Enabled by default**.
 
 -   **Unique Session IDs**: Flask generates a unique session ID for each user session. This ID is used to store session data on the server and is regenerated after each request to prevent session fixation attacks. **Enabled by default**.
