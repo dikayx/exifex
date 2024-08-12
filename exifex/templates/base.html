@@ -96,11 +96,13 @@
         <!-- Bootstrap JS -->
         <script src="../static/js/bootstrap.bundle.min.js"></script>
         <script>
-            let date = new Date();
-            if (date.getFullYear() > 2024) {
-                document.querySelector(
-                    ".footer .container .text-muted"
-                ).textContent += ` - ${date.getFullYear()}`;
+            if (typeof date === "undefined") {
+                let date = new Date();
+                if (date.getFullYear() > 2024) {
+                    document.querySelector(
+                        ".footer .container .text-muted"
+                    ).textContent += ` - ${date.getFullYear()}`;
+                }
             }
         </script>
     </body>
