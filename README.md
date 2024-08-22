@@ -2,7 +2,7 @@
 
 [![Python3](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
-[![Build Status](https://github.com/dan-koller/exifex/actions/workflows/python-app.yml/badge.svg)](https://github.com/dan-koller/exifex/actions/workflows/python-app.yml)
+[![Build Status](https://github.com/dikayx/exifex/actions/workflows/python-app.yml/badge.svg)](https://github.com/dikayx/exifex/actions/workflows/python-app.yml)
 
 ExifEx is a small utility tool to extract EXIF metadata from images. It is written in Python and Flask and uses the Pillow library to read the images and retrieve the metadata.
 
@@ -21,7 +21,7 @@ _Example images taken from [this](https://github.com/ianare/exif-samples) reposi
 
 ## Get started
 
-Download the latest release from the [releases page](https://github.com/dan-koller/exifex/releases) and use the [setup.sh](setup.sh) (Mac & Linux) or [setup.bat](setup.bat) (Windows) script to set up the app via Docker or locally. For more detailed instructions, see the [installation guide](docs/INSTALLATION.md).
+Download the latest release from the [releases page](https://github.com/dikayx/exifex/releases) and use the [setup.sh](setup.sh) (Mac & Linux) or [setup.bat](setup.bat) (Windows) script to set up the app via Docker or locally. For more detailed instructions, see the [installation guide](docs/INSTALLATION.md).
 
 If you are already familiar with Git, you can use the commands below to clone the repository and run the setup script.
 
@@ -30,13 +30,13 @@ If you are already familiar with Git, you can use the commands below to clone th
 To get the app up and running on Mac or Linux, run:
 
 ```bash
-git clone https://github.com/dan-koller/exifex.git && cd exifex && chmod +x setup.sh && ./setup.sh
+git clone https://github.com/dikayx/exifex.git && cd exifex && chmod +x setup.sh && ./setup.sh
 ```
 
 On Windows, open a command prompt (cmd) and run:
 
 ```cmd
-git clone https://github.com/dan-koller/exifex.git && cd exifex && setup.bat
+git clone https://github.com/dikayx/exifex.git && cd exifex && setup.bat
 ```
 
 Follow the instructions in the terminal to start the app. By default, it will be available at [http://localhost:8080](http://localhost:8080). If you want to use SSL, see the [Securing the app with SSL](docs/INSTALLATION.md#securing-the-app-with-ssl) section in the installation guide.
@@ -49,7 +49,7 @@ It's simple! Just drag and drop one or multiple images into the dropzone or clic
 
 ## Contributing
 
-If you want to contribute to the project, feel free to open an issue or a pull request. You can also suggest new features or improvements by [creating an issue](https://github.com/dan-koller/exifex/issues). Check out the [contributing guidelines](docs/CONTRIBUTING.md) for more information.
+If you want to contribute to the project, feel free to open an issue or a pull request. You can also suggest new features or improvements by [creating an issue](https://github.com/dikayx/exifex/issues). Check out the [contributing guidelines](docs/CONTRIBUTING.md) for more information.
 
 ## License
 

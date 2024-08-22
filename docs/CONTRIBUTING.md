@@ -12,7 +12,7 @@ Pull requests, bug reports, and all other forms of contribution are welcomed and
 
 ## Opening an issue
 
-If you encounter a bug, have a feature request, or want to suggest an improvement, please open an issue on the [GitHub repository](https://github.com/dan-koller/exifex/issues). Make sure to include as much information as possible, such as:
+If you encounter a bug, have a feature request, or want to suggest an improvement, please open an issue on the [GitHub repository](https://github.com/dikayx/exifex/issues). Make sure to include as much information as possible, such as:
 
 -   A clear and descriptive title
 -   A detailed description of the issue or feature request
@@ -22,7 +22,7 @@ If you encounter a bug, have a feature request, or want to suggest an improvemen
 
 ## Pull requests
 
-If you want to contribute code to the project, you can open a pull request on the [GitHub repository](https://github.com/dan-koller/exifex/pulls).
+If you want to contribute code to the project, you can open a pull request on the [GitHub repository](https://github.com/dikayx/exifex/pulls).
 
 ## Coding style
 

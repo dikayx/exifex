@@ -23,6 +23,6 @@ ExifEx tries to follow the latest security best practices and recommendations. A
 
 ## Reporting a Vulnerability
 
-If you discover a security issue in ExifEx, please [create an issue](https://github.com/dan-koller/exifex/issues). I take security seriously and will do my best to address the issue promptly.
+If you discover a security issue in ExifEx, please [create an issue](https://github.com/dikayx/exifex/issues). I take security seriously and will do my best to address the issue promptly.
 
 If you have any contributions or suggestions to improve the security of ExifEx, feel free to open a pull request. Your help is greatly appreciated!
