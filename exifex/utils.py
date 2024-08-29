@@ -20,17 +20,17 @@ def dms_to_string(dms_tuple) -> str:
 def format_coordinates(data) -> str:
     """
     Creates a human-readable string from a dictionary containing latitude and longitude information.
-    
+
     Parameters:
     - data (dict): A dictionary with keys 'lat_ref', 'lat', 'lon_ref', and 'lon'.
-    
+
     Returns:
     - str: A formatted string representing the coordinates in a human-readable format.
     """
-    lat_ref = data['lat_ref']
-    lat = data['lat']
-    lon_ref = data['lon_ref']
-    lon = data['lon']
+    lat_ref = data["lat_ref"]
+    lat = data["lat"]
+    lon_ref = data["lon_ref"]
+    lon = data["lon"]
 
     lat_str = dms_to_string(lat)
     lon_str = dms_to_string(lon)
@@ -67,14 +67,18 @@ def create_google_maps_url(gps_coords) -> str:
     Returns:
     - str: A URL to Google Maps with the GPS coordinates.
     """
-    dec_deg_lat = convert_decimal_degrees(float(gps_coords["lat"][0]),
-                                          float(gps_coords["lat"][1]),
-                                          float(gps_coords["lat"][2]),
-                                          gps_coords["lat_ref"])
-    dec_deg_lon = convert_decimal_degrees(float(gps_coords["lon"][0]),
-                                          float(gps_coords["lon"][1]),
-                                          float(gps_coords["lon"][2]),
-                                          gps_coords["lon_ref"])
+    dec_deg_lat = convert_decimal_degrees(
+        float(gps_coords["lat"][0]),
+        float(gps_coords["lat"][1]),
+        float(gps_coords["lat"][2]),
+        gps_coords["lat_ref"],
+    )
+    dec_deg_lon = convert_decimal_degrees(
+        float(gps_coords["lon"][0]),
+        float(gps_coords["lon"][1]),
+        float(gps_coords["lon"][2]),
+        gps_coords["lon_ref"],
+    )
     return f"https://maps.google.com/?q={dec_deg_lat},{dec_deg_lon}"
 
 
@@ -88,11 +92,7 @@ def extract_gps_info(file) -> dict:
     Returns:
     - dict: A dictionary containing the extracted GPS information.
     """
-    gps_data = {
-        "file": file,
-        "exif_data": {},
-        "gps_coords": {}
-    }
+    gps_data = {"file": file, "exif_data": {}, "gps_coords": {}}
 
     try:
         image = Image.open(file)
